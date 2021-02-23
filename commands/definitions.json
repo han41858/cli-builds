@@ -31,7 +31,8 @@
       "properties": {
         "help": {
           "enum": [true, false, "json", "JSON"],
-          "description": "Shows a help message for this command in the console.",
+          "/description": "Shows a help message for this command in the console.",
+          "description": "이 명령과 관련된 도움말을 콘솔에 표시합니다.",
           "default": false
         }
       }
