@@ -5,7 +5,8 @@
   "options": [
     {
       "name": "project",
-      "description": "The name of the project to build. Can be an application or a library.",
+      "/description": "The name of the project to build. Can be an application or a library.",
+      "description": "빌드할 프로젝트 이름을 지정합니다. 애플리케이션이나 라이브러리를 지정할 수 있습니다.",
       "type": "string",
       "required": false,
       "aliases": [],
@@ -14,7 +15,8 @@
     },
     {
       "name": "configuration",
-      "description": "One or more named builder configurations as a comma-separated list as specified in the \"configurations\" section of angular.json.\nThe builder uses the named configurations to run the given target.\nFor more information, see https://angular.io/guide/workspace-config#alternate-build-configurations.\nSetting this explicitly overrides the \"--prod\" flag.",
+      "/description": "One or more named builder configurations as a comma-separated list as specified in the \"configurations\" section of angular.json.\nThe builder uses the named configurations to run the given target.\nFor more information, see https://angular.io/guide/workspace-config#alternate-build-configurations.\nSetting this explicitly overrides the \"--prod\" flag.",
+      "description": "Angular 빌더가 프로젝트를 빌드할 때 사용할 환경설정을 쉼표(,)로 구분하며 지정합니다. 자세한 내용은 https://angular.kr/guide/workspace-config#alternate-build-configurations 문서를 참고하세요.\n이 옵션을 사용하면 \"--prod\" 플래그를 오버라이드합니다.",
       "type": "string",
       "required": false,
       "aliases": [
@@ -24,7 +26,8 @@
     },
     {
       "name": "prod",
-      "description": "Shorthand for \"--configuration=production\".\nSet the build configuration to the production target.\nBy default, the production target is set up in the workspace configuration such that all builds make use of bundling, limited tree-shaking, and also limited dead code elimination.",
+      "/description": "Shorthand for \"--configuration=production\".\nSet the build configuration to the production target.\nBy default, the production target is set up in the workspace configuration such that all builds make use of bundling, limited tree-shaking, and also limited dead code elimination.",
+      "description": "운영용 환경설정을 적용하는 \"--configuration=production\" 의 축약형태입니다.\n운영용 빌드 환경설정은 워크스페이스 환경설정 파일에 구성하며, 이 설정에는 번들링, 트리 셰이킹, 사용하지 않는 코드 자동 제거와 같은 설정이 적용됩니다.",
       "type": "boolean",
       "required": false,
       "aliases": [],
@@ -32,7 +35,8 @@
     },
     {
       "name": "help",
-      "description": "Shows a help message for this command in the console.",
+      "/description": "Shows a help message for this command in the console.",
+      "description": "이 명령과 관련된 도움말을 콘솔에 표시합니다.",
       "type": "boolean",
       "types": [
         "boolean",
@@ -51,7 +55,8 @@
     },
     {
       "name": "main",
-      "description": "The full path for the main entry point to the app, relative to the current workspace.",
+      "/description": "The full path for the main entry point to the app, relative to the current workspace.",
+      "description": "애플리케이션의 진입점이 되는 파일을 현재 워크스페이스의 상대경로로 지정합니다.",
       "type": "string",
       "required": false,
       "aliases": [],
@@ -59,7 +64,8 @@
     },
     {
       "name": "polyfills",
-      "description": "The full path for the polyfills file, relative to the current workspace.",
+      "/description": "The full path for the polyfills file, relative to the current workspace.",
+      "description": "폴리필 파일을 현재 워크스페이스의 상대경로로 지정합니다.",
       "type": "string",
       "required": false,
       "aliases": [],
@@ -67,7 +73,8 @@
     },
     {
       "name": "ts-config",
-      "description": "The full path for the TypeScript configuration file, relative to the current workspace.",
+      "/description": "The full path for the TypeScript configuration file, relative to the current workspace.",
+      "description": "TypeScript 환경설정 파일을 현재 워크스페이스의 상대경로로 지정합니다.",
       "type": "string",
       "required": false,
       "aliases": [],
@@ -75,7 +82,8 @@
     },
     {
       "name": "optimization",
-      "description": "Enables optimization of the build output. Including minification of scripts and styles, tree-shaking, dead-code elimination, inlining of critical CSS and fonts inlining. For more information, see https://angular.io/guide/workspace-config#optimization-configuration.",
+      "/description": "Enables optimization of the build output. Including minification of scripts and styles, tree-shaking, dead-code elimination, inlining of critical CSS and fonts inlining. For more information, see https://angular.io/guide/workspace-config#optimization-configuration.",
+      "description": "빌드 결과물을 최적화할지 지정합니다. 이 옵션이 활성화되면 스크립트, 스타일 파일에 트리 셰이킹을 적용하고 실제로 사용되지 않는 코드를 제거하며, 스크립트 파일과 스타일 파일을 압축합니다. 자세한 내용은 https://angular.kr/guide/workspace-config#optimization-configuration 문서를 참고하세요.",
       "type": "boolean",
       "default": false,
       "required": false,
@@ -85,7 +93,8 @@
     },
     {
       "name": "output-path",
-      "description": "The full path for the new output directory, relative to the current workspace.\n\nBy default, writes output to a folder named dist/ in the current project.",
+      "/description": "The full path for the new output directory, relative to the current workspace.\n\nBy default, writes output to a folder named dist/ in the current project.",
+      "description": "빌드 결과물이 생성될 위치를 현재 워크스페이스의 상대경로로 지정합니다.\n\n기본값은 현재 프로젝트 최상위 폴더의 dist/ 폴더입니다.",
       "type": "string",
       "required": false,
       "aliases": [],
@@ -93,7 +102,8 @@
     },
     {
       "name": "resources-output-path",
-      "description": "The path where style resources will be placed, relative to outputPath.",
+      "/description": "The path where style resources will be placed, relative to outputPath.",
+      "description": "스타일 파일이 복사될 위치를 빌드 결과물 생성 위치의 상대경로로 지정합니다.",
       "type": "string",
       "default": "",
       "required": false,
@@ -102,7 +112,8 @@
     },
     {
       "name": "aot",
-      "description": "Build using Ahead of Time compilation.",
+      "/description": "Build using Ahead of Time compilation.",
+      "description": "AOT 컴파일러로 빌드합니다.",
       "type": "boolean",
       "default": false,
       "required": false,
@@ -112,7 +123,8 @@
     },
     {
       "name": "source-map",
-      "description": "Output source maps for scripts and styles. For more information, see https://angular.io/guide/workspace-config#source-map-configuration.",
+      "/description": "Output source maps for scripts and styles. For more information, see https://angular.io/guide/workspace-config#source-map-configuration.",
+      "description": "빌드하면서 생성되는 스크립트 파일과 스타일 파일의 소스 맵을 생성합니다. 자세한 내용은 https://angular.kr/guide/workspace-config#source-map-configuration 문서를 참고하세요.",
       "type": "boolean",
       "default": true,
       "required": false,
@@ -121,7 +133,8 @@
     },
     {
       "name": "vendor-chunk",
-      "description": "Use a separate bundle containing only vendor libraries.",
+      "/description": "Use a separate bundle containing only vendor libraries.",
+      "description": "서드파티 라이브러리만 포함하는 빌드 결과물을 별도 파일로 분리합니다.",
       "type": "boolean",
       "default": true,
       "required": false,
@@ -130,7 +143,8 @@
     },
     {
       "name": "common-chunk",
-      "description": "Use a separate bundle containing code used across multiple bundles.",
+      "/description": "Use a separate bundle containing code used across multiple bundles.",
+      "description": "여러 파일에 공통으로 사용되는 코드를 별도 파일로 분리합니다.",
       "type": "boolean",
       "default": true,
       "required": false,
@@ -139,7 +153,8 @@
     },
     {
       "name": "base-href",
-      "description": "Base url for the application being built.",
+      "/description": "Base url for the application being built.",
+      "description": "애플리케이션의 베이스 URL을 지정합니다.",
       "type": "string",
       "required": false,
       "aliases": [],
@@ -147,7 +162,8 @@
     },
     {
       "name": "deploy-url",
-      "description": "URL where files will be deployed.",
+      "/description": "URL where files will be deployed.",
+      "description": "배포될 URL을 지정합니다.",
       "type": "string",
       "required": false,
       "aliases": [],
@@ -155,7 +171,8 @@
     },
     {
       "name": "verbose",
-      "description": "Adds more details to output logging.",
+      "/description": "Adds more details to output logging.",
+      "description": "좀 더 자세한 내용을 로그로 출력합니다.",
       "type": "boolean",
       "default": false,
       "required": false,
@@ -164,7 +181,8 @@
     },
     {
       "name": "progress",
-      "description": "Log progress to the console while building.",
+      "/description": "Log progress to the console while building.",
+      "description": "빌드 진행률을 콘솔에 표시합니다.",
       "type": "boolean",
       "default": true,
       "required": false,
@@ -173,34 +191,41 @@
     },
     {
       "name": "i18n-file",
-      "description": "Localization file to use for i18n.",
+      "/description": "Localization file to use for i18n.",
+      "description": "i18n으로 적용할 파일을 지정합니다.",
       "type": "string",
       "required": false,
       "aliases": [],
       "hidden": false,
-      "deprecated": "Use 'locales' object in the project metadata instead."
+      "/deprecated": "Use 'locales' object in the project metadata instead.",
+      "deprecated": "프로젝트 메타데이터에서 'locales' 객체를 사용하세요."
     },
     {
       "name": "i18n-format",
-      "description": "Format of the localization file specified with --i18n-file.",
+      "/description": "Format of the localization file specified with --i18n-file.",
+      "description": "--i18n-file을 사용할 때 해당 파일이 어떤 형식인지 지정합니다.",
       "type": "string",
       "required": false,
       "aliases": [],
       "hidden": false,
-      "deprecated": "No longer needed as the format will be determined automatically."
+      "/deprecated": "No longer needed as the format will be determined automatically.",
+      "deprecated": "이제 파일의 형식이 자동으로 결정되기 때문에 더이상 사용하지 않습니다."
     },
     {
       "name": "i18n-locale",
-      "description": "Locale to use for i18n.",
+      "/description": "Locale to use for i18n.",
+      "description": "i18n으로 적용할 지역을 지정합니다.",
       "type": "string",
       "required": false,
       "aliases": [],
       "hidden": false,
-      "deprecated": "Use 'localize' instead."
+      "/deprecated": "Use 'localize' instead.",
+      "deprecated": "'localize'를 사용하세요."
     },
     {
       "name": "i18n-missing-translation",
-      "description": "How to handle missing translations for i18n.",
+      "/description": "How to handle missing translations for i18n.",
+      "description": "i18n 번역 파일 중 누락된 항목을 어떻게 처리할지 지정합니다.",
       "type": "string",
       "default": "warning",
       "enum": [
@@ -214,7 +239,8 @@
     },
     {
       "name": "localize",
-      "description": "Translate the bundles in one or more locales.",
+      "/description": "Translate the bundles in one or more locales.",
+      "description": "빌드할 때 다국어를 적용합니다.",
       "type": "boolean",
       "required": false,
       "aliases": [],
@@ -222,17 +248,20 @@
     },
     {
       "name": "extract-css",
-      "description": "Extract CSS from global styles into '.css' files instead of '.js'.",
+      "/description": "Extract CSS from global styles into '.css' files instead of '.js'.",
+      "description": "전역 스타일 파일을 '.js'로 생성하지 않고 '.css' 파일로 생성합니다.",
       "type": "boolean",
       "default": true,
       "required": false,
       "aliases": [],
       "hidden": false,
-      "deprecated": "Deprecated since version 11.0. No longer required to disable CSS extraction for HMR."
+      "/deprecated": "Deprecated since version 11.0. No longer required to disable CSS extraction for HMR.",
+      "deprecated": "11.0 버전부터 지원이 중단되었습니다. HMR 지원을 위해 CSS로 추출하는 기능은 더이상 지원되지 않습니다."
     },
     {
       "name": "watch",
-      "description": "Run build when files change.",
+      "/description": "Run build when files change.",
+      "description": "파일이 변경되었을 때 다시 빌드합니다.",
       "type": "boolean",
       "default": false,
       "required": false,
@@ -241,7 +270,8 @@
     },
     {
       "name": "output-hashing",
-      "description": "Define the output filename cache-busting hashing mode.",
+      "/description": "Define the output filename cache-busting hashing mode.",
+      "description": "빌드 결과물에 붙는 해시 모드를 지정합니다.",
       "type": "string",
       "default": "none",
       "enum": [
@@ -256,7 +286,8 @@
     },
     {
       "name": "poll",
-      "description": "Enable and define the file watching poll time period in milliseconds.",
+      "/description": "Enable and define the file watching poll time period in milliseconds.",
+      "description": "파일이 변경된 것을 감지하는 대기시간을 ms 단위로 지정합니다.",
       "type": "number",
       "required": false,
       "aliases": [],
@@ -264,7 +295,8 @@
     },
     {
       "name": "delete-output-path",
-      "description": "Delete the output path before building.",
+      "/description": "Delete the output path before building.",
+      "description": "빌드하기 전에 빌드 결과물이 위치할 폴더를 지웁니다.",
       "type": "boolean",
       "default": true,
       "required": false,
@@ -273,7 +305,8 @@
     },
     {
       "name": "preserve-symlinks",
-      "description": "Do not use the real path when resolving modules. If unset then will default to `true` if NodeJS option --preserve-symlinks is set.",
+      "/description": "Do not use the real path when resolving modules. If unset then will default to `true` if NodeJS option --preserve-symlinks is set.",
+      "description": "모듈을 참조할 때 실제 경로를 사용하지 않습니다. NodeJS 옵션 --preserve-symlinks가 지정되어 있으면 기본값이 `true`로 사용됩니다.",
       "type": "boolean",
       "required": false,
       "aliases": [],
@@ -281,7 +314,8 @@
     },
     {
       "name": "extract-licenses",
-      "description": "Extract all licenses in a separate file.",
+      "/description": "Extract all licenses in a separate file.",
+      "description": "라이센스 항목을 개별 파일로 추출합니다.",
       "type": "boolean",
       "default": false,
       "required": false,
@@ -290,7 +324,8 @@
     },
     {
       "name": "show-circular-dependencies",
-      "description": "Show circular dependency warnings on builds.",
+      "/description": "Show circular dependency warnings on builds.",
+      "description": "순환 참조가 사용되면 경고합니다.",
       "type": "boolean",
       "default": true,
       "required": false,
@@ -299,7 +334,8 @@
     },
     {
       "name": "build-optimizer",
-      "description": "Enables '@angular-devkit/build-optimizer' optimizations when using the 'aot' option.",
+      "/description": "Enables '@angular-devkit/build-optimizer' optimizations when using the 'aot' option.",
+      "description": "'aot' 옵션을 사용할 때 '@angular-devkit/build-optimizer' 최적화 툴을 활성화합니다.",
       "type": "boolean",
       "default": false,
       "required": false,
@@ -308,7 +344,8 @@
     },
     {
       "name": "named-chunks",
-      "description": "Use file name for lazy loaded chunks.",
+      "/description": "Use file name for lazy loaded chunks.",
+      "description": "지연 로딩 모듈을 생성할 때 파일 이름을 사용합니다.",
       "type": "boolean",
       "default": true,
       "required": false,
@@ -317,7 +354,8 @@
     },
     {
       "name": "subresource-integrity",
-      "description": "Enables the use of subresource integrity validation.",
+      "/description": "Enables the use of subresource integrity validation.",
+      "description": "서브 리소스 통합 유효성 검사를 활성화 합니다.",
       "type": "boolean",
       "default": false,
       "required": false,
@@ -326,7 +364,8 @@
     },
     {
       "name": "service-worker",
-      "description": "Generates a service worker config for production builds.",
+      "/description": "Generates a service worker config for production builds.",
+      "description": "운영용으로 빌드할 때 서비스 워커 설정파일을 생성합니다.",
       "type": "boolean",
       "default": false,
       "required": false,
@@ -335,7 +374,8 @@
     },
     {
       "name": "ngsw-config-path",
-      "description": "Path to ngsw-config.json.",
+      "/description": "Path to ngsw-config.json.",
+      "description": "ngsw-config.json 파일의 경로를 지정합니다.",
       "type": "string",
       "required": false,
       "aliases": [],
@@ -343,7 +383,8 @@
     },
     {
       "name": "index",
-      "description": "Configures the generation of the application's HTML index.",
+      "/description": "Configures the generation of the application's HTML index.",
+      "description": "애플리케이션 HTML 인덱스 생성방식을 지정합니다.",
       "type": "string",
       "required": false,
       "aliases": [],
@@ -351,7 +392,8 @@
     },
     {
       "name": "stats-json",
-      "description": "Generates a 'stats.json' file which can be analyzed using tools such as 'webpack-bundle-analyzer'.",
+      "/description": "Generates a 'stats.json' file which can be analyzed using tools such as 'webpack-bundle-analyzer'.",
+      "description": "'webpack-bundle-analyzer' 툴로 분석할 수 잇는 'stats.json' 파일을 생성합니다.",
       "type": "boolean",
       "default": false,
       "required": false,
@@ -360,7 +402,8 @@
     },
     {
       "name": "fork-type-checker",
-      "description": "Run the TypeScript type checker in a forked process.",
+      "/description": "Run the TypeScript type checker in a forked process.",
+      "description": "TypeScript 타입 검사를 별도 프로세스에서 실행합니다.",
       "type": "boolean",
       "default": true,
       "required": false,
@@ -369,16 +412,19 @@
     },
     {
       "name": "lazy-modules",
-      "description": "List of additional NgModule files that will be lazy loaded. Lazy router modules will be discovered automatically.",
+      "/description": "List of additional NgModule files that will be lazy loaded. Lazy router modules will be discovered automatically.",
+      "description": "지연로딩될 NgModule 파일 목록을 지정합니다. 지연로딩되는 라우터 모듈은 자동으로 결정됩니다.",
       "type": "array",
       "required": false,
       "aliases": [],
       "hidden": false,
-      "deprecated": "'SystemJsNgModuleLoader' is deprecated, and this is part of its usage. Use 'import()' syntax instead."
+      "/deprecated": "'SystemJsNgModuleLoader' is deprecated, and this is part of its usage. Use 'import()' syntax instead.",
+      "deprecated": "이 기능에 필요한 'SystemJsNgModuleLoader'의 지원이 중단되었습니다. 'import()' 문법을 사용하세요."
     },
     {
       "name": "web-worker-ts-config",
-      "description": "TypeScript configuration for Web Worker modules.",
+      "/description": "TypeScript configuration for Web Worker modules.",
+      "description": "Web Worker 모듈에 적용될 TypeScript 환경설정 파일을 지정합니다.",
       "type": "string",
       "required": false,
       "aliases": [],
@@ -386,7 +432,8 @@
     },
     {
       "name": "cross-origin",
-      "description": "Define the crossorigin attribute setting of elements that provide CORS support.",
+      "/description": "Define the crossorigin attribute setting of elements that provide CORS support.",
+      "description": "CORS 지원을 위해 크로스 오리진 어트리뷰트 값을 지정합니다.",
       "type": "string",
       "default": "none",
       "enum": [
@@ -400,7 +447,8 @@
     },
     {
       "name": "experimental-rollup-pass",
-      "description": "Concatenate modules with Rollup before bundling them with Webpack.",
+      "/description": "Concatenate modules with Rollup before bundling them with Webpack.",
+      "description": "Webpack으로 빌드하기 전에 Rolup으로 모듈을 병합합니다.",
       "type": "boolean",
       "default": false,
       "required": false,
@@ -409,7 +457,8 @@
     },
     {
       "name": "allowed-common-js-dependencies",
-      "description": "A list of CommonJS packages that are allowed to be used without a build time warning.",
+      "/description": "A list of CommonJS packages that are allowed to be used without a build time warning.",
+      "description": "CommonJS 방식으로 빌드된 패키지를 사용하면 빌드할 때 경고 메시지가 표시됩니다. 이 경고 메시지의 대상에서 제외할 패키지 목록을 지정합니다.",
       "type": "array",
       "required": false,
       "aliases": [],
