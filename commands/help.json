@@ -1,7 +1,8 @@
 {
   "$schema": "http://json-schema.org/schema",
   "$id": "ng-cli://commands/help.json",
-  "description": "Lists available commands and their short descriptions.",
+  "/description": "Lists available commands and their short descriptions.",
+  "description": "사용할 수 있는 명령과 간단한 사용방법을 출력합니다.",
   "$longDescription": "./help-long.md",
 
   "$scope": "all",

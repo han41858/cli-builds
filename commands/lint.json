@@ -1,7 +1,8 @@
 {
   "$schema": "http://json-schema.org/schema",
   "$id": "ng-cli://commands/lint.json",
-  "description": "Runs linting tools on Angular app code in a given project folder.",
+  "/description": "Runs linting tools on Angular app code in a given project folder.",
+  "description": "지정된 Angular 프로젝트를 대상으로 린트 툴을 실행합니다.",
   "$longDescription": "./lint-long.md",
 
   "$aliases": [ "l" ],
@@ -15,14 +16,16 @@
       "properties": {
         "project": {
           "type": "string",
-          "description": "The name of the project to lint.",
+          "/description": "The name of the project to lint.",
+          "description": "린트 툴을 실행할 프로젝트를 지정합니다.",
           "$default": {
             "$source": "argv",
             "index": 0
           }
         },
         "configuration": {
-          "description": "The linting configuration to use.",
+          "/description": "The linting configuration to use.",
+          "description": "적용할 린트 환경설정을 지정합니다.",
           "type": "string",
           "aliases": [
             "c"

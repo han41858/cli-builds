@@ -1,7 +1,8 @@
 {
   "$schema": "http://json-schema.org/schema",
   "$id": "ng-cli://commands/deploy.json",
-  "description": "Invokes the deploy builder for a specified project or for the default project in the workspace.",
+  "/description": "Invokes the deploy builder for a specified project or for the default project in the workspace.",
+  "description": " 배포 빌더로 프로젝트를 빌드합니다.",
   "$longDescription": "./deploy-long.md",
 
   "$scope": "in",
@@ -13,14 +14,16 @@
       "properties": {
         "project": {
           "type": "string",
-          "description": "The name of the project to deploy.",
+          "/description": "The name of the project to deploy.",
+          "description": "배포하려는 프로젝트 이름",
           "$default": {
             "$source": "argv",
             "index": 0
           }
         },
         "configuration": {
-          "description": "One or more named builder configurations as a comma-separated list as specified in the \"configurations\" section of angular.json.\nThe builder uses the named configurations to run the given target.\nFor more information, see https://angular.io/guide/workspace-config#alternate-build-configurations.",
+          "/description": "One or more named builder configurations as a comma-separated list as specified in the \"configurations\" section of angular.json.\nThe builder uses the named configurations to run the given target.\nFor more information, see https://angular.io/guide/workspace-config#alternate-build-configurations.",
+          "description": "빌더에 적용할 환경설정을 쉼표(,)로 구분해서 지정합니다. 이 환경설정은 angular.json 파일의 \"configurations\" 섹션에 구성합니다.\n자세한 내용은 https://angular.kr/guide/workspace-config#alternate-build-configurations 문서를 참고하세요.",
           "type": "string",
           "aliases": [
             "c"

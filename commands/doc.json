@@ -1,7 +1,8 @@
 {
   "$schema": "http://json-schema.org/schema",
   "$id": "ng-cli://commands/doc.json",
-  "description": "Opens the official Angular documentation (angular.io) in a browser, and searches for a given keyword.",
+  "/description": "Opens the official Angular documentation (angular.io) in a browser, and searches for a given keyword.",
+  "description": "브라우저로 공식 Angular 문서(angular.io)를 열고, 인자로 전달된 키워드를 검색합니다.",
   "$longDescription": "",
 
   "$aliases": [ "d" ],
@@ -14,7 +15,8 @@
       "properties": {
         "keyword": {
           "type": "string",
-          "description": "The keyword to search for, as provided in the search bar in angular.io.",
+          "/description": "The keyword to search for, as provided in the search bar in angular.io.",
+          "description": "angular.io에서 검색할 키워드",
           "$default": {
             "$source": "argv",
             "index": 0
@@ -24,7 +26,8 @@
           "aliases": ["s"],
           "type": "boolean",
           "default": false,
-          "description": "Search all of angular.io. Otherwise, searches only API reference documentation."
+          "/description": "Search all of angular.io. Otherwise, searches only API reference documentation.",
+          "description": "angular.io 전체에서 검색합니다. 이 옵션을 지정하지 않으면 API 문서에서만 검색합니다."
         },
         "version" : {
           "oneOf": [
@@ -36,7 +39,8 @@
               "enum": [2, "next"]
             }
           ],
-          "description": "Contains the version of Angular to use for the documentation. If not provided, the command uses your current Angular core version."
+          "/description": "Contains the version of Angular to use for the documentation. If not provided, the command uses your current Angular core version.",
+          "description": "검색할 문서의 버전을 지정합니다. 버전을 지정하지 않으면 현재 Angular 코어 버전을 기준으로 검색합니다."
         }
       },
       "required": [

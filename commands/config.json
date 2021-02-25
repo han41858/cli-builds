@@ -1,7 +1,8 @@
 {
   "$schema": "http://json-schema.org/schema",
   "$id": "ng-cli://commands/config.json",
-  "description": "Retrieves or sets Angular configuration values in the angular.json file for the workspace.",
+  "/description": "Retrieves or sets Angular configuration values in the angular.json file for the workspace.",
+  "description": "워크스페이스 환경설정 파일 angular.json에 있는 환경설정 값을 가져오거나 지정합니다.",
   "$longDescription": "",
 
   "$aliases": [],
@@ -15,7 +16,8 @@
       "properties": {
         "jsonPath": {
           "type": "string",
-          "description": "The configuration key to set or query, in JSON path format. For example: \"a[3].foo.bar[2]\". If no new value is provided, returns the current value of this key.",
+          "/description": "The configuration key to set or query, in JSON path format. For example: \"a[3].foo.bar[2]\". If no new value is provided, returns the current value of this key.",
+          "description": "환경설정 키를 JSON 형식으로 \"a[3].foo.bar[2]\"와 같은 식으로 지정합니다. 새 값을 지정하지 않으면 현재 설정된 값을 반환합니다.",
           "$default": {
             "$source": "argv",
             "index": 0
@@ -23,7 +25,8 @@
         },
         "value": {
           "type": ["string", "number", "boolean"],
-          "description": "If provided, a new value for the given configuration key.",
+          "/description": "If provided, a new value for the given configuration key.",
+          "description": "값을 지정하면 이 값으로 환경설정 키 값을 설정합니다.",
           "$default": {
             "$source": "argv",
             "index": 1
@@ -31,7 +34,8 @@
         },
         "global": {
           "type": "boolean",
-          "description": "Access the global configuration in the caller's home directory.",
+          "/description": "Access the global configuration in the caller's home directory.",
+          "description": "전역 환경설정 객체를 참조할지 지정합니다.",
           "default": false,
           "aliases": ["g"]
         }
