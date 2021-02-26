@@ -1,7 +1,8 @@
 {
   "$schema": "http://json-schema.org/schema",
   "$id": "ng-cli://commands/generate.json",
-  "description": "Generates and/or modifies files based on a schematic.",
+  "/description": "Generates and/or modifies files based on a schematic.",
+  "description": "스키매틱에 정의된 대로 Angular 구성요소를 생성하거나 수정합니다.",
   "$longDescription": "",
 
   "$aliases": [ "g" ],
@@ -15,7 +16,8 @@
       "properties": {
         "schematic": {
           "type": "string",
-          "description": "The schematic or collection:schematic to generate.",
+          "/description": "The schematic or collection:schematic to generate.",
+          "description": "생성하려는 스키매틱을 지정합니다.",
           "$default": {
             "$source": "argv",
             "index": 0
