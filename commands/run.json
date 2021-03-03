@@ -1,7 +1,8 @@
 {
   "$schema": "http://json-schema.org/schema",
   "$id": "ng-cli://commands/run.json",
-  "description": "Runs an Architect target with an optional custom builder configuration defined in your project.",
+  "/description": "Runs an Architect target with an optional custom builder configuration defined in your project.",
+  "description": "프로젝트 환경설정에 따라 커스텀 빌더로 아키텍트(Architect) 대상을 실행합니다.",
   "$longDescription": "./run-long.md",
 
   "$aliases": [],
@@ -15,14 +16,16 @@
       "properties": {
         "target": {
           "type": "string",
-          "description": "The Architect target to run.",
+          "/description": "The Architect target to run.",
+          "description": "실행하려는 Architect를 지정합니다.",
           "$default": {
             "$source": "argv",
             "index": 0
           }
         },
         "configuration": {
-          "description": "One or more named builder configurations as a comma-separated list as specified in the \"configurations\" section of angular.json.\nThe builder uses the named configurations to run the given target.\nFor more information, see https://angular.io/guide/workspace-config#alternate-build-configurations.",
+          "/description": "One or more named builder configurations as a comma-separated list as specified in the \"configurations\" section of angular.json.\nThe builder uses the named configurations to run the given target.\nFor more information, see https://angular.io/guide/workspace-config#alternate-build-configurations.",
+          "description": "쉼표(`,`)를 사용하면 angular.json 파일의 \"configurations\" 섹션에 정의된 빌더 환경설정을 여러개 사용할 수 있습니다.\n빌더는 이 환경설정에 정의된 이름으로 대상을 실행합니다. 자세한 내용은 https://angular.kr/guide/workspace-config#alternate-build-configurations 문서를 참고하세요.",
           "type": "string",
           "aliases": [ "c" ]
         }
