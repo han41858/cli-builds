@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/schema",
+  "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "ng-cli://commands/analytics.json",
   "/description": "Configures the gathering of Angular CLI usage metrics. See https://angular.io/cli/usage-analytics-gathering.",
   "description": "Angular CLI 사용 통계 설정을 변경합니다. https://angular.kr/cli/usage-analytics-gathering 를 참고하세요.",
@@ -15,13 +15,7 @@
     {
       "properties": {
         "settingOrProject": {
-          "enum": [
-            "on",
-            "off",
-            "ci",
-            "project",
-            "prompt"
-          ],
+          "enum": ["on", "off", "ci", "project", "prompt"],
           "/description": "Directly enables or disables all usage analytics for the user, or prompts the user to set the status interactively, or sets the default status for the project.",
           "description": "사용하는 값에 따라 해당 사용자의 사용통계를 직접 활성화하거나 비활성화할 수 있으며, 프롬프트 방식으로 진행할 수 있습니다. 프로젝트 기본값을 적용할 수도 있습니다.",
           "$default": {
@@ -30,11 +24,7 @@
           }
         },
         "projectSetting": {
-          "enum": [
-            "on",
-            "off",
-            "prompt"
-          ],
+          "enum": ["on", "off", "prompt"],
           "/description": "Sets the default analytics enablement status for the project.",
           "description": "프로젝트의 기본 설정값을 지정합니다.",
           "$default": {
@@ -43,9 +33,7 @@
           }
         }
       },
-      "required": [
-        "settingOrProject"
-      ]
+      "required": ["settingOrProject"]
     },
     { "$ref": "./definitions.json#/definitions/base" }
   ]

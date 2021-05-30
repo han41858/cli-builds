@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/schema",
+  "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "ng-cli://commands/help.json",
   "/description": "Lists available commands and their short descriptions.",
   "description": "사용할 수 있는 명령과 간단한 사용방법을 출력합니다.",
@@ -10,7 +10,5 @@
   "$impl": "./help-impl#HelpCommand",
 
   "type": "object",
-  "allOf": [
-    { "$ref": "./definitions.json#/definitions/base" }
-  ]
+  "allOf": [{ "$ref": "./definitions.json#/definitions/base" }]
 }

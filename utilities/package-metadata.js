@@ -1,11 +1,18 @@
 "use strict";
+/**
+ * @license
+ * Copyright Google LLC All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.fetchPackageManifest = exports.fetchPackageMetadata = void 0;
 const fs_1 = require("fs");
 const os_1 = require("os");
 const path = require("path");
-const ini = require('ini');
 const lockfile = require('@yarnpkg/lockfile');
+const ini = require('ini');
 const pacote = require('pacote');
 let npmrc;
 function ensureNpmrc(logger, usingYarn, verbose) {
@@ -13,12 +20,12 @@ function ensureNpmrc(logger, usingYarn, verbose) {
         try {
             npmrc = readOptions(logger, false, verbose);
         }
-        catch (_a) { }
+        catch { }
         if (usingYarn) {
             try {
                 npmrc = { ...npmrc, ...readOptions(logger, true, verbose) };
             }
-            catch (_b) { }
+            catch { }
         }
     }
 }
@@ -81,9 +88,9 @@ function readOptions(logger, yarn = false, showPotentials = false) {
                         if (typeof value === 'string') {
                             const cafile = path.resolve(path.dirname(location), value);
                             try {
-                                options['ca'] = fs_1.readFileSync(cafile, 'utf8').replace(/\r?\n/, '\\n');
+                                options['ca'] = fs_1.readFileSync(cafile, 'utf8').replace(/\r?\n/g, '\n');
                             }
-                            catch (_a) { }
+                            catch { }
                         }
                         break;
                     default:

@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/schema",
+  "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "ng-cli://commands/config.json",
   "/description": "Retrieves or sets Angular configuration values in the angular.json file for the workspace.",
   "description": "워크스페이스 환경설정 파일 angular.json에 있는 환경설정 값을 가져오거나 지정합니다.",
@@ -40,8 +40,7 @@
           "aliases": ["g"]
         }
       },
-      "required": [
-      ]
+      "required": []
     },
     { "$ref": "./definitions.json#/definitions/base" }
   ]

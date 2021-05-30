@@ -1,11 +1,11 @@
 {
-  "$schema": "http://json-schema.org/schema",
+  "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "ng-cli://commands/generate.json",
   "/description": "Generates and/or modifies files based on a schematic.",
   "description": "스키매틱에 정의된 대로 Angular 구성요소를 생성하거나 수정합니다.",
   "$longDescription": "",
 
-  "$aliases": [ "g" ],
+  "$aliases": ["g"],
   "$scope": "in",
   "$type": "schematics",
   "$impl": "./generate-impl#GenerateCommand",
@@ -24,8 +24,7 @@
           }
         }
       },
-      "required": [
-      ]
+      "required": []
     },
     { "$ref": "./definitions.json#/definitions/base" },
     { "$ref": "./definitions.json#/definitions/schematic" },
