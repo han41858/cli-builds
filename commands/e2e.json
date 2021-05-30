@@ -1,11 +1,11 @@
 {
-  "$schema": "http://json-schema.org/schema",
+  "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "ng-cli://commands/e2e.json",
-  "/description": "Builds and serves an Angular app, then runs end-to-end tests using Protractor.",
-  "description": "Angular 앱을 빌드하고 실행한 후에 Protractor로 엔드-투-엔드 테스트를 실행합니다.",
+  "/description": "Builds and serves an Angular app, then runs end-to-end tests.",
+  "description": "Angular 앱을 빌드하고 실행한 후에 엔드-투-엔드 테스트를 실행합니다.",
   "$longDescription": "./e2e-long.md",
 
-  "$aliases": [ "e" ],
+  "$aliases": ["e"],
   "$scope": "in",
   "$type": "architect",
   "$impl": "./e2e-impl#E2eCommand",
