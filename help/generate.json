@@ -1445,7 +1445,7 @@
               "required": false,
               "aliases": [],
               "hidden": false,
-              "/deprecated": "No longer has an effect."
+              "/deprecated": "No longer has an effect.",
               "deprecated": "더이상 사용되지 않습니다."
             }
           ],
