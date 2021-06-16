@@ -1,7 +1,7 @@
 {
   "name": "build",
   "description": "Compiles an Angular app into an output directory named dist/ at the given output path. Must be executed from within a workspace directory.",
-  "longDescription": "The command can be used to build a project of type \"application\" or \"library\".\nWhen used to build a library, a different builder is invoked, and only the `ts-config`, `configuration`, and `watch` options are applied.\nAll other options apply only to building applications.\n\nThe application builder uses the [webpack](https://webpack.js.org/) build tool, with default configuration options specified in the workspace configuration file (`angular.json`) or with a named alternative configuration.\nA \"production\" configuration is created by default when you use the CLI to create the project, and you can use that configuration by specifying the `--configuration=\"production\"` or the `--prod` option.\n\nThe configuration options generally correspond to the command options.\nYou can override individual configuration defaults by specifying the corresponding options on the command line.\nThe command can accept option names given in either dash-case or camelCase.\nNote that in the configuration file, you must specify names in camelCase.\n\nSome additional options can only be set through the configuration file,\neither by direct editing or with the `ng config` command.\nThese include `assets`, `styles`, and `scripts` objects that provide runtime-global resources to include in the project.\nResources in CSS, such as images and fonts, are automatically written and fingerprinted at the root of the output folder.\n\nFor further details, see [Workspace Configuration](guide/workspace-config).\n",
+  "longDescription": "The command can be used to build a project of type \"application\" or \"library\".\nWhen used to build a library, a different builder is invoked, and only the `ts-config`, `configuration`, and `watch` options are applied.\nAll other options apply only to building applications.\n\nThe application builder uses the [webpack](https://webpack.js.org/) build tool, with default configuration options specified in the workspace configuration file (`angular.json`) or with a named alternative configuration.\nA \"development\" configuration is created by default when you use the CLI to create the project, and you can use that configuration by specifying the `--configuration development`.\n\nThe configuration options generally correspond to the command options.\nYou can override individual configuration defaults by specifying the corresponding options on the command line.\nThe command can accept option names given in either dash-case or camelCase.\nNote that in the configuration file, you must specify names in camelCase.\n\nSome additional options can only be set through the configuration file,\neither by direct editing or with the `ng config` command.\nThese include `assets`, `styles`, and `scripts` objects that provide runtime-global resources to include in the project.\nResources in CSS, such as images and fonts, are automatically written and fingerprinted at the root of the output folder.\n\nFor further details, see [Workspace Configuration](guide/workspace-config).\n",
   "options": [
     {
       "name": "project",
@@ -31,7 +31,9 @@
       "type": "boolean",
       "required": false,
       "aliases": [],
-      "hidden": false
+      "hidden": false,
+      "/deprecated": "Use `--configuration production` instead.",
+      "deprecated": "`--configuration production`를 사용하세요."
     },
     {
       "name": "help",
@@ -81,11 +83,26 @@
       "hidden": false
     },
     {
+      "name": "inline-style-language",
+      "description": "The stylesheet language to use for the application's inline component styles.",
+      "type": "string",
+      "default": "css",
+      "enum": [
+        "css",
+        "less",
+        "sass",
+        "scss"
+      ],
+      "required": false,
+      "aliases": [],
+      "hidden": false
+    },
+    {
       "name": "optimization",
       "/description": "Enables optimization of the build output. Including minification of scripts and styles, tree-shaking, dead-code elimination, inlining of critical CSS and fonts inlining. For more information, see https://angular.io/guide/workspace-config#optimization-configuration.",
       "description": "빌드 결과물을 최적화할지 지정합니다. 이 옵션이 활성화되면 스크립트, 스타일 파일에 트리 셰이킹을 적용하고 실제로 사용되지 않는 코드를 제거하며, 스크립트 파일과 스타일 파일을 압축합니다. 자세한 내용은 https://angular.kr/guide/workspace-config#optimization-configuration 문서를 참고하세요.",
       "type": "boolean",
-      "default": false,
+      "default": true,
       "required": false,
       "aliases": [],
       "hidden": false,
@@ -115,7 +132,7 @@
       "/description": "Build using Ahead of Time compilation.",
       "description": "AOT 컴파일러로 빌드합니다.",
       "type": "boolean",
-      "default": false,
+      "default": true,
       "required": false,
       "aliases": [],
       "hidden": false,
@@ -126,24 +143,24 @@
       "/description": "Output source maps for scripts and styles. For more information, see https://angular.io/guide/workspace-config#source-map-configuration.",
       "description": "빌드하면서 생성되는 스크립트 파일과 스타일 파일의 소스 맵을 생성합니다. 자세한 내용은 https://angular.kr/guide/workspace-config#source-map-configuration 문서를 참고하세요.",
       "type": "boolean",
-      "default": true,
+      "default": false,
       "required": false,
       "aliases": [],
       "hidden": false
     },
     {
       "name": "vendor-chunk",
-      "/description": "Use a separate bundle containing only vendor libraries.",
-      "description": "서드파티 라이브러리만 포함하는 빌드 결과물을 별도 파일로 분리합니다.",
+      "/description": "Generate a seperate bundle containing only vendor libraries. This option should only used for development.",
+      "description": "서드파티 라이브러리만 포함하는 빌드 결과물을 별도 파일로 분리합니다. 이 옵션은 개발용으로만 사용해야 합니다.",
       "type": "boolean",
-      "default": true,
+      "default": false,
       "required": false,
       "aliases": [],
       "hidden": false
     },
     {
       "name": "common-chunk",
-      "/description": "Use a separate bundle containing code used across multiple bundles.",
+      "/description": "Generate a seperate bundle containing code used across multiple bundles.",
       "description": "여러 파일에 공통으로 사용되는 코드를 별도 파일로 분리합니다.",
       "type": "boolean",
       "default": true,
@@ -188,39 +205,6 @@
       "required": false,
       "aliases": [],
       "hidden": false
-    },
-    {
-      "name": "i18n-file",
-      "/description": "Localization file to use for i18n.",
-      "description": "i18n으로 적용할 파일을 지정합니다.",
-      "type": "string",
-      "required": false,
-      "aliases": [],
-      "hidden": false,
-      "/deprecated": "Use 'locales' object in the project metadata instead.",
-      "deprecated": "프로젝트 메타데이터에서 'locales' 객체를 사용하세요."
-    },
-    {
-      "name": "i18n-format",
-      "/description": "Format of the localization file specified with --i18n-file.",
-      "description": "--i18n-file을 사용할 때 해당 파일이 어떤 형식인지 지정합니다.",
-      "type": "string",
-      "required": false,
-      "aliases": [],
-      "hidden": false,
-      "/deprecated": "No longer needed as the format will be determined automatically.",
-      "deprecated": "이제 파일의 형식이 자동으로 결정되기 때문에 더이상 사용하지 않습니다."
-    },
-    {
-      "name": "i18n-locale",
-      "/description": "Locale to use for i18n.",
-      "description": "i18n으로 적용할 지역을 지정합니다.",
-      "type": "string",
-      "required": false,
-      "aliases": [],
-      "hidden": false,
-      "/deprecated": "Use 'localize' instead.",
-      "deprecated": "'localize'를 사용하세요."
     },
     {
       "name": "i18n-missing-translation",
@@ -317,7 +301,7 @@
       "/description": "Extract all licenses in a separate file.",
       "description": "라이센스 항목을 개별 파일로 추출합니다.",
       "type": "boolean",
-      "default": false,
+      "default": true,
       "required": false,
       "aliases": [],
       "hidden": false
@@ -327,17 +311,19 @@
       "/description": "Show circular dependency warnings on builds.",
       "description": "순환 참조가 사용되면 경고합니다.",
       "type": "boolean",
-      "default": true,
+      "default": false,
       "required": false,
       "aliases": [],
-      "hidden": false
+      "hidden": false,
+      "/deprecated": "The recommended method to detect circular dependencies in project code is to use either a lint rule or other external tooling.",
+      "deprecated": "린트 툴이나 별도 툴로 순환 참조를 확인하세요."
     },
     {
       "name": "build-optimizer",
       "/description": "Enables '@angular-devkit/build-optimizer' optimizations when using the 'aot' option.",
       "description": "'aot' 옵션을 사용할 때 '@angular-devkit/build-optimizer' 최적화 툴을 활성화합니다.",
       "type": "boolean",
-      "default": false,
+      "default": true,
       "required": false,
       "aliases": [],
       "hidden": false
@@ -347,7 +333,7 @@
       "/description": "Use file name for lazy loaded chunks.",
       "description": "지연 로딩 모듈을 생성할 때 파일 이름을 사용합니다.",
       "type": "boolean",
-      "default": true,
+      "default": false,
       "required": false,
       "aliases": [],
       "hidden": false
@@ -401,27 +387,6 @@
       "hidden": false
     },
     {
-      "name": "fork-type-checker",
-      "/description": "Run the TypeScript type checker in a forked process.",
-      "description": "TypeScript 타입 검사를 별도 프로세스에서 실행합니다.",
-      "type": "boolean",
-      "default": true,
-      "required": false,
-      "aliases": [],
-      "hidden": false
-    },
-    {
-      "name": "lazy-modules",
-      "/description": "List of additional NgModule files that will be lazy loaded. Lazy router modules will be discovered automatically.",
-      "description": "지연로딩될 NgModule 파일 목록을 지정합니다. 지연로딩되는 라우터 모듈은 자동으로 결정됩니다.",
-      "type": "array",
-      "required": false,
-      "aliases": [],
-      "hidden": false,
-      "/deprecated": "'SystemJsNgModuleLoader' is deprecated, and this is part of its usage. Use 'import()' syntax instead.",
-      "deprecated": "이 기능에 필요한 'SystemJsNgModuleLoader'의 지원이 중단되었습니다. 'import()' 문법을 사용하세요."
-    },
-    {
       "name": "web-worker-ts-config",
       "/description": "TypeScript configuration for Web Worker modules.",
       "description": "Web Worker 모듈에 적용될 TypeScript 환경설정 파일을 지정합니다.",
@@ -441,16 +406,6 @@
         "anonymous",
         "use-credentials"
       ],
-      "required": false,
-      "aliases": [],
-      "hidden": false
-    },
-    {
-      "name": "experimental-rollup-pass",
-      "/description": "Concatenate modules with Rollup before bundling them with Webpack.",
-      "description": "Webpack으로 빌드하기 전에 Rolup으로 모듈을 병합합니다.",
-      "type": "boolean",
-      "default": false,
       "required": false,
       "aliases": [],
       "hidden": false

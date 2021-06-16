@@ -1,11 +1,11 @@
 {
-  "$schema": "http://json-schema.org/schema",
+  "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "ng-cli://commands/new.json",
   "/description": "Creates a new workspace and an initial Angular application.",
   "description": "워크스페이스와 기본 Angular 애플리케이션을 생성합니다.",
   "$longDescription": "./new.md",
 
-  "$aliases": [ "n" ],
+  "$aliases": ["n"],
   "$scope": "out",
   "$type": "schematic",
   "$impl": "./new-impl#NewCommand",
@@ -16,14 +16,14 @@
       "properties": {
         "collection": {
           "type": "string",
-          "aliases": [ "c" ],
+          "aliases": ["c"],
           "/description": "A collection of schematics to use in generating the initial application.",
           "description": "초기 애플리케이션 생성에 사용될 컬렉션을 지정합니다."
         },
         "verbose": {
           "type": "boolean",
           "default": false,
-          "aliases": [ "v" ],
+          "aliases": ["v"],
           "/description": "Add more details to output logging.",
           "description": "로그를 더 자세하게 출력합니다."
         }

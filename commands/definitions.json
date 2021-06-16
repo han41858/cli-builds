@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/schema",
+  "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "ng-cli://commands/definitions.json",
 
   "definitions": {
@@ -18,14 +18,13 @@
           "/description": "One or more named builder configurations as a comma-separated list as specified in the \"configurations\" section of angular.json.\nThe builder uses the named configurations to run the given target.\nFor more information, see https://angular.io/guide/workspace-config#alternate-build-configurations.\nSetting this explicitly overrides the \"--prod\" flag.",
           "description": "Angular 빌더가 프로젝트를 빌드할 때 사용할 환경설정을 쉼표(,)로 구분하며 지정합니다. 자세한 내용은 https://angular.kr/guide/workspace-config#alternate-build-configurations 문서를 참고하세요.\n이 옵션을 사용하면 \"--prod\" 플래그를 오버라이드합니다.",
           "type": "string",
-          "aliases": [
-            "c"
-          ]
+          "aliases": ["c"]
         },
         "prod": {
           "/description": "Shorthand for \"--configuration=production\".\nSet the build configuration to the production target.\nBy default, the production target is set up in the workspace configuration such that all builds make use of bundling, limited tree-shaking, and also limited dead code elimination.",
           "description": "운영용 환경설정을 적용하는 \"--configuration=production\" 의 축약형태입니다.\n운영용 빌드 환경설정은 워크스페이스 환경설정 파일에 구성하며, 이 설정에는 번들링, 트리 셰이킹, 사용하지 않는 코드 자동 제거와 같은 설정이 적용됩니다.",
-          "type": "boolean"
+          "type": "boolean",
+          "x-deprecated": "`--configuration production`를 대신 사용하세요."
         }
       }
     },
@@ -41,22 +40,24 @@
       }
     },
     "schematic": {
+      "type": "object",
       "properties": {
         "dryRun": {
           "type": "boolean",
           "default": false,
-          "aliases": [ "d" ],
+          "aliases": ["d"],
           "description": "Run through and reports activity without writing out results."
         },
         "force": {
           "type": "boolean",
           "default": false,
-          "aliases": [ "f" ],
+          "aliases": ["f"],
           "description": "Force overwriting of existing files."
         }
       }
     },
     "interactive": {
+      "type": "object",
       "properties": {
         "interactive": {
           "type": "boolean",

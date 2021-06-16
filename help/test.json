@@ -1,7 +1,7 @@
 {
   "name": "test",
   "description": "Runs unit tests in a project.",
-  "longDescription": "Takes the name of the project, as specified in the `projects` section of the `angular.json` workspace configuration file.\nWhen a project name is not supplied, it will execute for all projects.",
+  "longDescription": "Takes the name of the project, as specified in the `projects` section of the `angular.json` workspace configuration file.\nWhen a project name is not supplied, it will execute for all projects.\n",
   "options": [
     {
       "name": "project",
@@ -28,7 +28,8 @@
       "type": "boolean",
       "required": false,
       "aliases": [],
-      "hidden": false
+      "hidden": false,
+      "deprecated": "Use `--configuration production` instead."
     },
     {
       "name": "help",
@@ -82,6 +83,21 @@
       "hidden": false
     },
     {
+      "name": "inline-style-language",
+      "description": "The stylesheet language to use for the application's inline component styles.",
+      "type": "string",
+      "default": "css",
+      "enum": [
+        "css",
+        "less",
+        "sass",
+        "scss"
+      ],
+      "required": false,
+      "aliases": [],
+      "hidden": false
+    },
+    {
       "name": "include",
       "description": "Globs of files to include, relative to workspace or project root. \nThere are 2 special cases:\n - when a path to directory is provided, all spec files ending \".spec.@(ts|tsx)\" will be included\n - when a path to a file is provided, and a matching spec file exists it will be included instead",
       "type": "array",
@@ -111,7 +127,6 @@
       "name": "watch",
       "description": "Run build when files change.",
       "type": "boolean",
-      "default": true,
       "required": false,
       "aliases": [],
       "hidden": false

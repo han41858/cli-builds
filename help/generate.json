@@ -19,7 +19,7 @@
           "description": "서버사이드 렌더링이 지원되는 애플리케이션 기본 코드를 생성합니다.",
           "options": [
             {
-              "name": "client-project",
+              "name": "project",
               "/description": "The name of the related client app.",
               "description": "관련 클라이언트 앱 이름을 지정합니다.",
               "type": "string",
@@ -150,7 +150,6 @@
               "type": "string",
               "enum": [
                 "Emulated",
-                "Native",
                 "None",
                 "ShadowDom"
               ],
@@ -193,8 +192,7 @@
                 "css",
                 "scss",
                 "sass",
-                "less",
-                "styl"
+                "less"
               ],
               "required": false,
               "aliases": [],
@@ -262,7 +260,7 @@
               "/description": "Creates an application with stricter bundle budgets settings.",
               "description": "애플리케이션 번들링 환경설정을 더 엄격하게 지정합니다.",
               "type": "boolean",
-              "default": false,
+              "default": true,
               "required": false,
               "aliases": [],
               "hidden": false,
@@ -276,14 +274,16 @@
               "default": false,
               "required": false,
               "aliases": [],
-              "hidden": false
+              "hidden": false,
+              "/deprecated": "Legacy browsers support is deprecated since version 12. For more information, see https://angular.io/guide/browser-support",
+              "deprecated": "구형 브라우저 지원이 12버전부터 중단되었습니다. 자세한 내용은 https://angular.kr/guide/browser-support 를 참고하세요."
             }
           ],
           "aliases": []
         },
         "class": {
           "name": "class",
-          "/description": "Creates a new generic class definition in the given or default project.",
+          "/description": "Creates a new, generic class definition in the given or default project.",
           "description": "클래스를 생성합니다.",
           "options": [
             {
@@ -354,7 +354,7 @@
         },
         "component": {
           "name": "component",
-          "/description": "Creates a new generic component definition in the given or default project.",
+          "/description": "Creates a new, generic component definition in the given or default project.",
           "description": "컴포넌트를 생성합니다.",
           "options": [
             {
@@ -431,7 +431,6 @@
               "type": "string",
               "enum": [
                 "Emulated",
-                "Native",
                 "None",
                 "ShadowDom"
               ],
@@ -479,8 +478,7 @@
                 "css",
                 "scss",
                 "sass",
-                "less",
-                "styl"
+                "less"
               ],
               "required": false,
               "aliases": [],
@@ -572,18 +570,6 @@
               "userAnalytics": 19
             },
             {
-              "name": "entry-component",
-              "/description": "The new component is the entry component of the declaring NgModule.",
-              "description": "새로 만드는 컴포넌트를 NgModule의 진입 컴포넌트로 지정합니다.",
-              "type": "boolean",
-              "default": false,
-              "required": false,
-              "aliases": [],
-              "hidden": false,
-              "/deprecated": "Since version 9.0.0 with Ivy, entryComponents is no longer necessary.",
-              "deprecated": "9.0.0 버전부터는 Ivy를 사용하기 때문에 더이상 entryComponents를 사용하지 않습니다."
-            },
-            {
               "name": "lint-fix",
               "/description": "Apply lint fixes after generating the component.",
               "description": "컴포넌트를 생성한 후에 린트 툴을 실행합니다.",
@@ -600,7 +586,7 @@
         },
         "directive": {
           "name": "directive",
-          "/description": "Creates a new generic directive definition in the given or default project.",
+          "/description": "Creates a new, generic directive definition in the given or default project.",
           "description": "디렉티브를 생성합니다.",
           "options": [
             {
@@ -751,6 +737,14 @@
               "name": "project",
               "/description": "The name of the project in which to create the enum. Default is the configured default project for the workspace.",
               "description": "열거값을 생성할 프로젝트 이름을 지정합니다. 따로 지정하지 않으면 워크스페이스의 기본 프로젝트에 열거값을 생성합니다.",
+              "type": "string",
+              "required": false,
+              "aliases": [],
+              "hidden": false
+            },
+            {
+              "name": "type",
+              "description": "Adds a developer-defined type to the filename, in the format \"name.type.ts\".",
               "type": "string",
               "required": false,
               "aliases": [],
@@ -922,7 +916,7 @@
         },
         "interface": {
           "name": "interface",
-          "/description": "Creates a new generic interface definition in the given or default project.",
+          "/description": "Creates a new, generic interface definition in the given or default project.",
           "description": "인터페이스를 생성합니다.",
           "options": [
             {
@@ -991,7 +985,7 @@
         },
         "library": {
           "name": "library",
-          "/description": "Creates a new generic library project in the current workspace.",
+          "/description": "Creates a new, generic library project in the current workspace.",
           "description": "라이브러리 프로젝트를 생성합니다.",
           "options": [
             {
@@ -1075,7 +1069,7 @@
         },
         "module": {
           "name": "module",
-          "/description": "Creates a new generic NgModule definition in the given or default project.",
+          "/description": "Creates a new, generic NgModule definition in the given or default project.",
           "description": "NgModule을 생성합니다.",
           "options": [
             {
@@ -1189,7 +1183,7 @@
         },
         "pipe": {
           "name": "pipe",
-          "/description": "Creates a new generic pipe definition in the given or default project.",
+          "/description": "Creates a new, generic pipe definition in the given or default project.",
           "description": "파이프를 생성합니다.",
           "options": [
             {
@@ -1448,17 +1442,18 @@
               "/description": "The configuration to apply service worker to.",
               "description": "서비스 워커가 동작할 환경설정을 지정합니다.",
               "type": "string",
-              "default": "production",
               "required": false,
               "aliases": [],
-              "hidden": false
+              "hidden": false,
+              "/deprecated": "No longer has an effect.",
+              "deprecated": "더이상 사용되지 않습니다."
             }
           ],
           "aliases": []
         },
         "web-worker": {
           "name": "web-worker",
-          "/description": "Creates a new generic web worker definition in the given or default project.",
+          "/description": "Creates a new, generic web worker definition in the given or default project.",
           "description": "웹 워커를 생성합니다.",
           "options": [
             {

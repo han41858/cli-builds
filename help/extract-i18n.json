@@ -27,7 +27,8 @@
       "type": "boolean",
       "required": false,
       "aliases": [],
-      "hidden": false
+      "hidden": false,
+      "deprecated": "Use `--configuration production` instead."
     },
     {
       "name": "help",
@@ -67,43 +68,11 @@
         "xlif",
         "xliff",
         "xlf2",
-        "xliff2"
+        "xliff2",
+        "json",
+        "arb",
+        "legacy-migrate"
       ],
-      "required": false,
-      "aliases": [],
-      "hidden": false
-    },
-    {
-      "name": "i18n-format",
-      "description": "Output format for the generated file.",
-      "type": "string",
-      "default": "xlf",
-      "enum": [
-        "xmb",
-        "xlf",
-        "xlif",
-        "xliff",
-        "xlf2",
-        "xliff2"
-      ],
-      "required": false,
-      "aliases": [],
-      "hidden": false,
-      "deprecated": "Use 'format' option instead."
-    },
-    {
-      "name": "i18n-locale",
-      "description": "Specifies the source language of the application.",
-      "type": "string",
-      "required": false,
-      "aliases": [],
-      "hidden": false,
-      "deprecated": "Use 'i18n' project level sub-option 'sourceLocale' instead."
-    },
-    {
-      "name": "ivy",
-      "description": "Use Ivy compiler to extract translations. The default for Ivy applications.",
-      "type": "boolean",
       "required": false,
       "aliases": [],
       "hidden": false
