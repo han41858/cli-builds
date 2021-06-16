@@ -266,12 +266,8 @@
     },
     {
       "name": "strict",
-<<<<<<< HEAD
-      "/description": "Creates a workspace with stricter type checking and stricter bundle budgets settings. This setting helps improve maintainability and catch bugs ahead of time. For more information, see https://angular.io/strict",
-      "description": "엄격한 타입 검사 규칙과 빌드 결과물 설정으로 워크스페이스를 생성합니다. 이 옵션을 사용하면 애플리케이션의 유지보수성을 높이기 때문에 버그를 사전에 발견할 수 있습니다. 자세한 내용은 https://angular.kr/strict 문서를 참고하세요.",
-=======
-      "description": "Creates a workspace with stricter type checking and stricter bundle budgets settings. This setting helps improve maintainability and catch bugs ahead of time. For more information, see https://angular.io/guide/strict-mode",
->>>>>>> 36ab6f7d93faf64388a55252d69262ea35228cfb
+      "/description": "Creates a workspace with stricter type checking and stricter bundle budgets settings. This setting helps improve maintainability and catch bugs ahead of time. For more information, see https://angular.io/guide/strict-mode",
+      "description": "엄격한 타입 검사 규칙과 빌드 결과물 설정으로 워크스페이스를 생성합니다. 이 옵션을 사용하면 애플리케이션의 유지보수성을 높이기 때문에 버그를 사전에 발견할 수 있습니다. 자세한 내용은 https://angular.kr/guide/strict-mode 문서를 참고하세요.",
       "type": "boolean",
       "default": true,
       "required": false,
